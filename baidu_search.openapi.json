@@ -1,0 +1,90 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "百度搜索 API",
+    "description": "百度搜索接口的 OpenAPI 配置文件",
+    "version": "1.0.0"
+  },
+  "tags": [],
+  "paths": {
+    "/s": {
+      "get": {
+        "summary": "baidu",
+        "deprecated": false,
+        "description": "百度搜索接口",
+        "operationId": "baidu_search",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "wd",
+            "in": "query",
+            "description": "查询关键词",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "tn",
+            "in": "query",
+            "description": "返回结果的格式（json）",
+            "required": false,
+            "example": "json",
+            "schema": {
+              "type": "string",
+              "default": "json"
+            }
+          },
+          {
+            "name": "rn",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "example": 10,
+            "schema": {
+              "type": "integer",
+              "default": 10
+            }
+          },
+          {
+            "name": "ie",
+            "in": "query",
+            "description": "返回的编码格式（utf-8）",
+            "required": false,
+            "example": "utf-8",
+            "schema": {
+              "type": "string",
+              "default": "utf-8"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    }
+  },
+  "components": {
+    "schemas": {},
+    "securitySchemes": {}
+  },
+  "servers": [
+    {
+      "url": "https://baidu.com",
+      "description": "开发环境"
+    }
+  ],
+  "security": []
+}
